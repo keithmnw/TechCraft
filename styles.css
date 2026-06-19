@@ -1,0 +1,134 @@
+:root {
+  font-family: 'Inter', sans-serif;
+  background-color: #090b13;
+  color: #eef2ff;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background: linear-gradient(180deg, #05070f 0%, #111827 100%);
+}
+
+.navbar-brand {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 0.18em;
+}
+
+.hero {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.96), rgba(7, 10, 20, 0.95));
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.16), transparent 30%);
+  pointer-events: none;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.letter-spacing-2 {
+  letter-spacing: 0.24em;
+}
+
+.tile {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  box-shadow: 0 30px 70px rgba(15, 23, 42, 0.25);
+}
+
+.tile p,
+.tile h5 {
+  color: #f8fafc;
+}
+
+.tile.floating {
+  transform: translateY(-12px);
+  transition: transform 0.35s ease;
+}
+
+.tile.floating:hover {
+  transform: translateY(-18px);
+}
+
+.featured-tiles {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.service-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.05));
+}
+
+.service-card h5,
+.service-card p {
+  color: #e5e7eb;
+}
+
+.icon {
+  background: rgba(59, 130, 246, 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1rem;
+  font-size: 1.4rem;
+}
+
+.bg-light {
+  background-color: #0f172a !important;
+}
+
+.bg-white {
+  background-color: transparent !important;
+}
+
+.text-secondary {
+  color: #94a3b8 !important;
+}
+
+footer {
+  background: #020617;
+}
+
+footer a {
+  color: #ffffff;
+}
+
+footer a:hover {
+  color: #60a5fa;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+
+.btn-outline-light {
+  color: #f8fafc;
+  border-color: rgba(248, 250, 252, 0.32);
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(248, 250, 252, 0.08);
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
