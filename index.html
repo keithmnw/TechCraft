@@ -18,6 +18,7 @@
   <header class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
     <div class="container">
       <a class="navbar-brand fw-bold text-white" href="#">TechCraft</a>
+      <button id="theme-toggle" class="btn btn-outline-light btn-sm me-3 d-none d-lg-inline-block" type="button">Light Mode</button>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -27,13 +28,16 @@
             <a class="nav-link active" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#services">Services</a>
+            <a class="nav-link" href="services.html">Services</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#portfolio">Portfolio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="testimonials.html">Testimonials</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#contact">Contact</a>
@@ -48,16 +52,16 @@
       <div class="container py-6">
         <div class="row align-items-center">
           <div class="col-lg-7">
-            <p class="text-uppercase letter-spacing-2 mb-3 text-secondary">Digital Strategy & Creative Craft</p>
+            <p class="text-uppercase letter-spacing-2 mb-3 text-secondary" style="padding-top: 25px; ">Digital Strategy & Creative Craft</p>
             <h1 class="display-5 fw-bold mb-4">We design bold digital experiences that move brands forward.</h1>
             <p class="lead mb-4">TechCraft is a full-service digital creative agency blending design, technology and storytelling to build immersive brands, websites, campaigns and systems for growth-minded companies.</p>
-            <div class="d-flex gap-3 flex-column flex-sm-row">
+            <div class="d-flex gap-3 flex-column flex-sm-row" style="padding-bottom: 25px; ">
               <a href="#contact" class="btn btn-primary btn-lg">Start a Project</a>
               <a href="#portfolio" class="btn btn-outline-light btn-lg">View Work</a>
             </div>
           </div>
           <div class="col-lg-5 mt-5 mt-lg-0">
-            <div class="tile floating p-5 text-dark">
+            <div class="tile floating p-5 text-dark" >
               <h5 class="fw-semibold">Why clients choose us</h5>
               <p>We move fast without sacrificing craft, pairing business-minded strategy with elegant digital experiences.</p>
               <ul class="list-unstyled mb-0">
@@ -111,7 +115,9 @@
         </div>
       </div>
     </section>
-
+  
+  
+    
     <section id="services" class="bg-light">
       <div class="container">
         <div class="text-center mb-5">
@@ -203,6 +209,7 @@
     </div>
   </footer>
 
+  <script src="theme.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
