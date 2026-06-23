@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | TechCraft Digital Creative Agency</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <style>
+        /* ── Form controls – dark-first, light-mode override ── */
+        .form-control,
+        .form-select {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #f8fafc;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(59, 130, 246, 0.6);
+            color: #f8fafc;
+            box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.15);
+        }
+
+        .form-control::placeholder {
+            color: #64748b;
+        }
+
+        .form-select option {
+            background: #1e293b;
+            color: #f8fafc;
+        }
+
+        .form-label {
+            color: #cbd5e1;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .form-check-label {
+            color: #94a3b8;
+            font-size: 0.875rem;
+        }
+
+        .char-counter {
+            font-size: 0.78rem;
+            color: #64748b;
+        }
+
+        .success-icon {
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+        /* ── Accordion – dark-first ── */
+        .accordion-item {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 0.5rem;
+            border-radius: 0.75rem !important;
+            overflow: hidden;
+        }
+
+        .accordion-button {
+            background: rgba(255, 255, 255, 0.05);
+            color: #f8fafc;
+            border: none;
+            font-weight: 500;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background: rgba(59, 130, 246, 0.12);
+            color: #60a5fa;
+            box-shadow: none;
+        }
+
+        .accordion-button::after {
+            filter: invert(1);
+        }
+
+        .accordion-button:not(.collapsed)::after {
+            filter: invert(0.5) sepia(1) saturate(5) hue-rotate(200deg);
+        }
+
+        .accordion-body {
+            background: rgba(255, 255, 255, 0.02);
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+
+        /* ── Light-mode overrides ── */
+        .light-mode .form-control,
+        .light-mode .form-select {
+            background: #ffffff;
+            border-color: #cbd5e1;
+            color: #0f172a;
+        }
+
+        .light-mode .form-control:focus,
+        .light-mode .form-select:focus {
+            background: #ffffff;
+            border-color: #3b82f6;
+            color: #0f172a;
+            box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.12);
+        }
+
+        .light-mode .form-control::placeholder {
+            color: #94a3b8;
+        }
+
+        .light-mode .form-select option {
+            background: #ffffff;
+            color: #0f172a;
+        }
+
+        .light-mode .form-label {
+            color: #334155;
+        }
+
+        .light-mode .form-check-label {
+            color: #64748b;
+        }
+
+        .light-mode .accordion-item {
+            border-color: #e2e8f0;
+        }
+
+        .light-mode .accordion-button {
+            background: #f8fafc;
+            color: #0f172a;
+        }
+
+        .light-mode .accordion-button:not(.collapsed) {
+            background: #eff6ff;
+            color: #2563eb;
+        }
+
+        .light-mode .accordion-button::after {
+            filter: none;
+        }
+
+        .light-mode .accordion-body {
+            background: #ffffff;
+            color: #475569;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-white" href="index.html">TechCraft</a>
+            <button id="theme-toggle" class="btn btn-outline-light btn-sm me-3" type="button">Light Mode</button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contacts.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ═══════════ HERO ═══════════ -->
+        <section class="hero text-white">
+            <div class="container py-6">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <p class="text-uppercase letter-spacing-2 mb-3 text-secondary" style="padding-top: 25px;">Get in
+                            touch</p>
+                        <h1 class="display-5 fw-bold mb-4">Let's build something remarkable together.</h1>
+                        <p class="lead mb-4">Whether you're launching a new product, refreshing a brand, or ready to put
+                            data behind your digital presence — we're here to help shape the idea and see it through.
+                        </p>
+                        <div class="d-flex gap-3 flex-column flex-sm-row" style="padding-bottom: 25px;">
+                            <a href="#contact-form" class="btn btn-primary btn-lg">Send a Message</a>
+                            <a href="#faq" class="btn btn-outline-light btn-lg">Read the FAQ</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 mt-5 mt-lg-0">
+                        <div class="tile floating p-5 text-dark">
+                            <h5 class="fw-semibold">We typically respond within</h5>
+                            <h2 class="fw-bold mb-1" style="color: #3b82f6;">24 hrs</h2>
+                            <p class="mb-3">on business days. For urgent enquiries, reach us directly at either email
+                                listed below.</p>
+                            <ul class="list-unstyled mb-0">
+                                <li>• Mon – Fri, 8:00 AM – 6:00 PM EAT</li>
+                                <li>• Projects scoped within 48 hours</li>
+                                <li>• Discovery calls available on request</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ CONTACT METHODS ═══════════ -->
+        <section class="bg-light">
+            <div class="container py-5">
+                <div class="text-center mb-5">
+                    <p class="text-uppercase text-secondary mb-2">Ways to reach us</p>
+                    <h2 class="fw-bold">Multiple ways to start a conversation.</h2>
+                </div>
+                <div class="row gy-4">
+                    <div class="col-md-4">
+                        <div class="tile service-card h-100 p-4 text-center">
+                            <div class="mb-3 icon mx-auto">✉️</div>
+                            <h5 class="mb-2">Project Enquiries</h5>
+                            <p class="mb-3">For new project briefs, proposals or to book a discovery call with our
+                                strategy team.</p>
+                            <a href="mailto:enquiries@techcraft.eu" class="fw-semibold text-decoration-none"
+                                style="color:#60a5fa;">enquiries@techcraft.eu</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="tile service-card h-100 p-4 text-center">
+                            <div class="mb-3 icon mx-auto">👤</div>
+                            <h5 class="mb-2">Direct Contact</h5>
+                            <p class="mb-3">Reach the TechCraft founder directly for partnerships, collaborations or
+                                press enquiries.</p>
+                            <a href="mailto:john.muleshe@strathmore.edu" class="fw-semibold text-decoration-none"
+                                style="color:#60a5fa;">john.muleshe@strathmore.edu</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="tile service-card h-100 p-4 text-center">
+                            <div class="mb-3 icon mx-auto">🤖</div>
+                            <h5 class="mb-2">Talk to Craft</h5>
+                            <p class="mb-3">Not sure what you need? Our AI project consultant helps you explore services
+                                and generate a brief automatically.</p>
+                            <a href="about.html" class="fw-semibold text-decoration-none" style="color:#60a5fa;">Learn
+                                about Craft →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ CONTACT FORM ═══════════ -->
+        <section id="contact-form" class="bg-white">
+            <div class="container">
+                <div class="row gy-5 align-items-start">
+
+                    <!-- FORM COLUMN -->
+                    <div class="col-lg-7">
+                        <p class="text-uppercase text-secondary mb-2 letter-spacing-2">Contact form</p>
+                        <h2 class="fw-bold mb-4">Send us a message.</h2>
+
+                        <!-- SUCCESS STATE (hidden until valid submit) -->
+                        <div id="formSuccess" class="tile p-5 text-center d-none">
+                            <div class="success-icon mb-3">✅</div>
+                            <h4 class="fw-bold mb-2">Message received — thank you!</h4>
+                            <p class="mb-0">We'll review your brief and get back to you within one business day. Keep an
+                                eye on your inbox at the address you provided.</p>
+                        </div>
+
+                        <!-- THE FORM -->
+                        <form id="contactForm" novalidate>
+                            <div class="row g-3">
+
+                                <div class="col-md-6">
+                                    <label for="fullName" class="form-label">Full Name <span
+                                            style="color:#ef4444;">*</span></label>
+                                    <input type="text" class="form-control" id="fullName"
+                                        placeholder="e.g. Alex Johnson" required>
+                                    <div class="invalid-feedback">Please enter your full name.</div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email Address <span
+                                            style="color:#ef4444;">*</span></label>
+                                    <input type="email" class="form-control" id="email" placeholder="you@company.com"
+                                        required>
+                                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="company" class="form-label">Company / Organisation</label>
+                                    <input type="text" class="form-control" id="company" placeholder="Optional">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="projectType" class="form-label">Project Type <span
+                                            style="color:#ef4444;">*</span></label>
+                                    <select class="form-select" id="projectType" required>
+                                        <option value="">Select a service...</option>
+                                        <option>Brand Identity</option>
+                                        <option>Web &amp; Product Design</option>
+                                        <option>Campaign &amp; Growth</option>
+                                        <option>ML Insights Setup</option>
+                                        <option>Full-Service Engagement</option>
+                                        <option>Other / Not sure yet</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select a project type.</div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="budget" class="form-label">Estimated Budget</label>
+                                    <select class="form-select" id="budget">
+                                        <option value="">Prefer not to say</option>
+                                        <option>Under $5,000</option>
+                                        <option>$5,000 – $20,000</option>
+                                        <option>$20,000 – $50,000</option>
+                                        <option>$50,000+</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="message" class="form-label">Tell us about your project <span
+                                            style="color:#ef4444;">*</span></label>
+                                    <textarea class="form-control" id="message" rows="5" maxlength="500"
+                                        placeholder="Describe your goals, timeline, audience, and anything else that gives us useful context..."
+                                        required></textarea>
+                                    <div class="d-flex justify-content-between align-items-start mt-1">
+                                        <div class="invalid-feedback d-block" id="messageError"
+                                            style="display: none !important;"></div>
+                                        <span class="char-counter ms-auto" id="charCounter">0 / 500</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="consent" required>
+                                        <label class="form-check-label" for="consent">
+                                            I agree to TechCraft using my details to respond to this enquiry. <span
+                                                style="color:#ef4444;">*</span>
+                                        </label>
+                                        <div class="invalid-feedback">You must agree before submitting.</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg w-100">Send Message →</button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- SIDEBAR COLUMN -->
+                    <div class="col-lg-5">
+                        <div class="featured-tiles" style="margin-top: 3.5rem;">
+                            <div class="tile p-4">
+                                <h5 class="mb-2">🗓️ Book a discovery call</h5>
+                                <p class="mb-0">Prefer to talk it through? Email <a href="mailto:enquiries@techcraft.eu"
+                                        style="color:#60a5fa;">enquiries@techcraft.eu</a> with "Discovery Call" in the
+                                    subject line and we'll send a scheduling link within 24 hours.</p>
+                            </div>
+                            <div class="tile p-4">
+                                <h5 class="mb-2">📋 What happens after you send</h5>
+                                <ul class="list-unstyled mb-0">
+                                    <li class="mb-2">1. We review your brief within 24 hrs</li>
+                                    <li class="mb-2">2. Craft analyses your project type and suggests a package</li>
+                                    <li class="mb-2">3. We send a scoping document and timeline estimate</li>
+                                    <li>4. You decide — no commitment, no pressure</li>
+                                </ul>
+                            </div>
+                            <div class="tile p-4">
+                                <h5 class="mb-2">🌍 Working hours</h5>
+                                <p class="mb-0">
+                                    Monday – Friday<br>
+                                    8:00 AM – 6:00 PM EAT<br>
+                                    <span class="text-secondary" style="font-size: 0.85rem;">UTC +3 · Nairobi,
+                                        Kenya</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ Q&A ACCORDION ═══════════ -->
+        <section id="faq" class="bg-light">
+            <div class="container py-5">
+                <div class="text-center mb-5">
+                    <p class="text-uppercase text-secondary mb-2">Questions & Answers</p>
+                    <h2 class="fw-bold">Common questions before reaching out.</h2>
+                    <p class="lead mt-3 mx-auto" style="max-width: 600px;">Can't find what you're looking for? Send it
+                        in the form above and we'll answer directly.</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+                        <div class="accordion" id="faqAccordion">
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                        How long does a typical project take from brief to launch?
+                                    </button>
+                                </h2>
+                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        It depends on scope. A focused brand identity project typically runs 4–6 weeks.
+                                        A full web design and build usually takes 8–14 weeks. Campaigns can move faster
+                                        — often 2–4 weeks — because the creative direction is narrower. After our
+                                        discovery call, we provide a detailed timeline as part of the scoping document
+                                        so you always know what to expect.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                                        Do you work with international clients?
+                                    </button>
+                                </h2>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Yes — the majority of our work is delivered remotely, so location is not a
+                                        barrier. We've collaborated with clients across Africa, Europe and North
+                                        America. All reviews, communication and handoffs happen digitally, and we
+                                        accommodate different time zones for calls and presentations.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                                        What information do I need to provide before we start?
+                                    </button>
+                                </h2>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        You don't need a polished brief. A rough sense of your goals, your audience and
+                                        what success looks like is enough. Our AI consultant Craft will ask follow-up
+                                        questions and generate a structured brief automatically. If you prefer, book a
+                                        discovery call and we'll extract everything we need in conversation.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                                        How does the ML Insights Engine work after my site goes live?
+                                    </button>
+                                </h2>
+                                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Once your site launches, we embed lightweight behavioural tracking that captures
+                                        how users interact with every element — scroll depth, click patterns, dwell time
+                                        and exit signals. Our ML models process this data weekly and deliver a
+                                        plain-English report to your dashboard, highlighting what's working, what isn't,
+                                        and what to prioritise next. No data science background required to act on it.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+                                        What exactly does the Craft AI assistant do?
+                                    </button>
+                                </h2>
+                                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Craft is an AI chatbot built into the TechCraft client portal. It helps you
+                                        describe what you want in plain language, asks guided questions about audience,
+                                        goals, budget and timeline, then recommends the right service package. After
+                                        launch, it reads your weekly ML reports and surfaces specific, plain-English
+                                        recommendations — so you always know what to improve next without having to
+                                        interpret raw data yourself.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">
+                                        Can I see examples of past work before committing?
+                                    </button>
+                                </h2>
+                                <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Absolutely. Our Portfolio page showcases selected case studies with context on
+                                        the brief, approach and outcome. For work relevant to a specific industry or
+                                        problem, email us and we'll share a curated set of case studies directly. We can
+                                        also walk through them during a discovery call if that's more useful.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq7" aria-expanded="false" aria-controls="faq7">
+                                        How many revision rounds are included in a project?
+                                    </button>
+                                </h2>
+                                <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Standard packages include two structured revision rounds — typically after
+                                        initial concepts and again after refined designs. These are consolidated rounds
+                                        where all feedback is gathered in one go, which keeps projects moving
+                                        efficiently. Additional revisions beyond that scope are priced separately.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq8" aria-expanded="false" aria-controls="faq8">
+                                        Do you offer ongoing support after the project goes live?
+                                    </button>
+                                </h2>
+                                <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Yes. We offer monthly retainer arrangements that include continued ML reporting,
+                                        design and content updates, Craft access and priority support. Retainer clients
+                                        also get early access to new TechCraft features and quarterly strategy reviews.
+                                        Retainer scope and pricing is discussed during the handover session at the close
+                                        of your initial project.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ BOTTOM CTA ═══════════ -->
+        <section class="bg-white">
+            <div class="container">
+                <div class="row align-items-center gy-4">
+                    <div class="col-lg-7">
+                        <h2 class="fw-bold mb-3">Still have questions? We'd love to hear from you.</h2>
+                        <p>No question is too early or too vague. Whether you have a fully-formed brief or just a rough
+                            idea, reaching out is always the right first step.</p>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="tile p-4 text-center">
+                            <p class="mb-1 text-secondary">Project enquiries</p>
+                            <a href="mailto:enquiries@techcraft.eu" class="d-block h5 text-decoration-none mb-3"
+                                style="color:#60a5fa;">enquiries@techcraft.eu</a>
+                            <p class="mb-1 text-secondary">Direct line</p>
+                            <a href="mailto:john.muleshe@strathmore.edu" class="d-block h5 text-decoration-none"
+                                style="color:#60a5fa;">john.muleshe@strathmore.edu</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold">TechCraft</h5>
+                    <p class="text-secondary mb-0">A digital creative agency crafting bold, human-first experiences for
+                        growing brands.</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="fw-bold mb-2">More from TechCraft</p>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="faq.html" class="text-white text-decoration-none">FAQ</a></li>
+                        <li><a href="careers.html" class="text-white text-decoration-none">Careers</a></li>
+                        <li><a href="insights.html" class="text-white text-decoration-none">Insights</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <p class="mb-1 text-secondary">Follow us</p>
+                    <a href="#" class="text-white text-decoration-none me-3">Instagram</a>
+                    <a href="#" class="text-white text-decoration-none me-3">LinkedIn</a>
+                    <a href="#" class="text-white text-decoration-none">Behance</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="theme.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // ════════════════════════════════════════════
+        //  JS FEATURE 2 — Contact Form Validation
+        //  + Real-time email check on blur
+        //  + Live character counter on message field
+        // ════════════════════════════════════════════
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const form = document.getElementById('contactForm');
+            const formSuccess = document.getElementById('formSuccess');
+            const messageField = document.getElementById('message');
+            const charCounter = document.getElementById('charCounter');
+            const messageError = document.getElementById('messageError');
+
+            // ── Live character counter ──
+            messageField.addEventListener('input', function () {
+                const count = this.value.length;
+                charCounter.textContent = count + ' / 500';
+                charCounter.style.color = count > 450 ? '#ef4444' : '#64748b';
+            });
+
+            // ── Real-time blur validation (email + name) ──
+            ['email', 'fullName'].forEach(function (id) {
+                document.getElementById(id).addEventListener('blur', function () {
+                    validateField(this);
+                });
+            });
+
+            // ── Form submit handler ──
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const required = [
+                    document.getElementById('fullName'),
+                    document.getElementById('email'),
+                    document.getElementById('projectType'),
+                    document.getElementById('message'),
+                    document.getElementById('consent')
+                ];
+
+                let allValid = true;
+                required.forEach(function (field) {
+                    if (!validateField(field)) allValid = false;
+                });
+
+                if (allValid) {
+                    form.classList.add('d-none');
+                    formSuccess.classList.remove('d-none');
+                    formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    const firstInvalid = form.querySelector('.is-invalid');
+                    if (firstInvalid) {
+                        firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        firstInvalid.focus();
+                    }
+                }
+            });
+
+            // ── Validation function ──
+            function validateField(field) {
+
+                // Checkbox
+                if (field.type === 'checkbox') {
+                    const ok = field.checked;
+                    field.classList.toggle('is-invalid', !ok);
+                    field.classList.toggle('is-valid', ok);
+                    return ok;
+                }
+
+                // Empty
+                if (!field.value.trim()) {
+                    markInvalid(field);
+                    return false;
+                }
+
+                // Email format
+                if (field.type === 'email') {
+                    const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim());
+                    if (!valid) { markInvalid(field); return false; }
+                }
+
+                // Minimum message length (20 chars)
+                if (field.id === 'message' && field.value.trim().length < 20) {
+                    markInvalid(field);
+                    messageError.textContent = 'Please write at least 20 characters describing your project.';
+                    messageError.style.display = 'block';
+                    return false;
+                }
+
+                // Select with empty default
+                if (field.tagName === 'SELECT' && field.value === '') {
+                    markInvalid(field);
+                    return false;
+                }
+
+                // Clear the custom message error if message is now valid
+                if (field.id === 'message') messageError.style.display = 'none';
+
+                markValid(field);
+                return true;
+            }
+
+            function markInvalid(field) {
+                field.classList.add('is-invalid');
+                field.classList.remove('is-valid');
+            }
+
+            function markValid(field) {
+                field.classList.remove('is-invalid');
+                field.classList.add('is-valid');
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>
