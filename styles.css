@@ -39,7 +39,7 @@ body {
 }
 
 body {
-  color: #e2e8f0;
+  color: #f1eaea;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -130,12 +130,22 @@ a:hover {
 .bg-white a,
 .bg-white .text-secondary,
 .bg-white .tile p,
-.bg-white .tile h5 {
+.bg-white .tile h5,
+.bg-white .tile,
+.bg-white .tile h1,
+.bg-white .tile h2,
+.bg-white .tile h3,
+.bg-white .tile h4,
+.bg-white .tile h6,
+.bg-white .tile span,
+.bg-white .service-card,
+.bg-white .service-card h5,
+.bg-white .service-card p {
   color: #0f172a !important;
 }
 
 .text-secondary {
-  color: #94a3b8 !important;
+  color: #cbd5e1 !important;
 }
 
 footer {
