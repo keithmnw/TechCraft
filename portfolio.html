@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="TechCraft portfolio — selected case studies in brand identity, web design and digital campaigns.">
+    <title>Portfolio | TechCraft Digital Creative Agency</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <style>
+        /* ── Portfolio card images ── */
+        .project-img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 1.25rem 1.25rem 0 0;
+            display: block;
+        }
+
+        .project-card-inner {
+            border-radius: 1.25rem;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .project-card-inner:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 40px 80px rgba(15, 23, 42, 0.4);
+        }
+
+        .project-tag {
+            display: inline-block;
+            padding: 0.2rem 0.7rem;
+            border-radius: 2rem;
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.25);
+        }
+
+        .featured-img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 1.25rem;
+            display: block;
+        }
+
+        /* Filter buttons */
+        .filter-btn {
+            transition: all 0.2s ease;
+        }
+
+        /* Column hide/show animation */
+        .project-col {
+            transition: opacity 0.25s ease;
+        }
+
+        .project-col.hidden {
+            display: none !important;
+        }
+
+        /* Light mode overrides */
+        .light-mode .project-tag {
+            background: rgba(37, 99, 235, 0.1);
+            color: #1d4ed8;
+            border-color: rgba(37, 99, 235, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-white" href="index.html">TechCraft</a>
+            <button id="theme-toggle" class="btn btn-outline-light btn-sm me-3" type="button">Light Mode</button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ═══════════ HERO ═══════════ -->
+        <section class="hero text-white">
+            <div class="container py-6">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <p class="text-uppercase letter-spacing-2 mb-3 text-secondary" style="padding-top: 25px;">Our
+                            work</p>
+                        <h1 class="display-5 fw-bold mb-4">Work that speaks before we do.</h1>
+                        <p class="lead mb-4">A selection of brand, product and campaign projects — each shaped around a
+                            specific business goal, and each measurably better for the strategy and craft behind it.</p>
+                        <div class="d-flex gap-3 flex-column flex-sm-row" style="padding-bottom: 25px;">
+                            <a href="#projects" class="btn btn-primary btn-lg">View Projects</a>
+                            <a href="contact.html" class="btn btn-outline-light btn-lg">Start a Project</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 mt-5 mt-lg-0">
+                        <div class="tile floating p-5 text-dark">
+                            <h5 class="fw-semibold">What you'll find here</h5>
+                            <p>Case studies across brand identity, web and product design, and campaign creative — with
+                                real context on what the brief was and what the outcome looked like.</p>
+                            <ul class="list-unstyled mb-0">
+                                <li>• 120+ projects delivered</li>
+                                <li>• Branding, web, and campaigns</li>
+                                <li>• Measurable outcomes on every brief</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ PROJECT GRID + FILTER ═══════════ -->
+        <section id="projects" class="bg-light">
+            <div class="container py-5">
+                <div class="text-center mb-4">
+                    <p class="text-uppercase text-secondary mb-2">Case studies</p>
+                    <h2 class="fw-bold mb-4">Selected projects.</h2>
+
+                    <!-- FILTER BUTTONS -->
+                    <div class="d-flex gap-2 flex-wrap justify-content-center mb-5">
+                        <button class="btn btn-primary btn-sm filter-btn px-4" data-filter="all">All</button>
+                        <button class="btn btn-outline-light btn-sm filter-btn px-4"
+                            data-filter="branding">Branding</button>
+                        <button class="btn btn-outline-light btn-sm filter-btn px-4" data-filter="web">Web &
+                            Product</button>
+                        <button class="btn btn-outline-light btn-sm filter-btn px-4"
+                            data-filter="campaigns">Campaigns</button>
+                    </div>
+                </div>
+
+                <div class="row gy-4" id="projectGrid">
+
+                    <!-- Project 1 — Web -->
+                    <div class="col-md-6 col-lg-4 project-col" data-category="web">
+                        <div class="tile project-card-inner">
+                            <img src="https://picsum.photos/seed/techlaunch/800/450" class="project-img"
+                                alt="TechLaunch e-commerce project">
+                            <div class="p-4">
+                                <span class="project-tag mb-2 d-inline-block">Web & Product</span>
+                                <h5 class="mb-2">TechLaunch E-Commerce</h5>
+                                <p class="mb-0">A product-led storefront with cinematic brand identity, curated
+                                    animations and clear conversion pathways — built to turn first-time visitors into
+                                    repeat buyers.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 — Branding -->
+                    <div class="col-md-6 col-lg-4 project-col" data-category="branding">
+                        <div class="tile project-card-inner">
+                            <img src="https://picsum.photos/seed/amplifybrand/800/450" class="project-img"
+                                alt="Amplify Health brand identity project">
+                            <div class="p-4">
+                                <span class="project-tag mb-2 d-inline-block">Branding</span>
+                                <h5 class="mb-2">Amplify Health Rebrand</h5>
+                                <p class="mb-0">A full brand identity overhaul for a digital health platform — new
+                                    visual language, tone of voice and motion system designed to build patient trust at
+                                    scale.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 — Campaigns -->
+                    <div class="col-md-6 col-lg-4 project-col" data-category="campaigns">
+                        <div class="tile project-card-inner">
+                            <img src="https://picsum.photos/seed/velocecampaign/800/450" class="project-img"
+                                alt="Veloce product launch campaign">
+                            <div class="p-4">
+                                <span class="project-tag mb-2 d-inline-block">Campaigns</span>
+                                <h5 class="mb-2">Veloce Launch Campaign</h5>
+                                <p class="mb-0">An integrated launch campaign — social assets, paid media creative,
+                                    landing page and email sequence — that drove 40K sign-ups in the first two weeks
+                                    post-launch.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 — Branding -->
+                    <div class="col-md-6 col-lg-4 project-col" data-category="branding">
+                        <div class="tile project-card-inner">
+                            <img src="https://picsum.photos/seed/nurasaas/800/450" class="project-img"
+                                alt="Nura SaaS rebrand project">
+                            <div class="p-4">
+                                <span class="project-tag mb-2 d-inline-block">Branding</span>
+                                <h5 class="mb-2">Nura SaaS Rebrand</h5>
+                                <p class="mb-0">Enterprise software brand strategy and visual system refresh — updated
+                                    product story, icon set, design tokens and sales collateral, rolled out across 12
+                                    markets.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 — Web -->
+                    <div class="col-md-6 col-lg-4 project-col" data-category="web">
+                        <div class="tile project-card-inner">
+                            <img src="https://picsum.photos/seed/greengrid/800/450" class="project-img"
+                                alt="GreenGrid sustainability platform">
+                            <div class="p-4">
+                                <span class="project-tag mb-2 d-inline-block">Web & Product</span>
+                                <h5 class="mb-2">GreenGrid Web Platform</h5>
+                                <p class="mb-0">A sustainability data platform designed to make carbon reporting
+                                    intuitive — data visualisation, interactive dashboards and a component library built
+                                    for scale.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 — Campaigns -->
+                    <div class="col-md-6 col-lg-4 project-col" data-category="campaigns">
+                        <div class="tile project-card-inner">
+                            <img src="https://picsum.photos/seed/zerotoone/800/450" class="project-img"
+                                alt="ZeroToOne product launch creative">
+                            <div class="p-4">
+                                <span class="project-tag mb-2 d-inline-block">Campaigns</span>
+                                <h5 class="mb-2">ZeroToOne Launch Creative</h5>
+                                <p class="mb-0">Full launch creative for a B2B SaaS startup — positioning strategy,
+                                    brand narrative, pitch deck design and digital ads that supported a $3M seed round
+                                    announcement.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ FEATURED CASE STUDY ═══════════ -->
+        <section class="bg-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <p class="text-uppercase text-secondary mb-2">Featured case study</p>
+                    <h2 class="fw-bold">A closer look at one project.</h2>
+                </div>
+                <div class="row align-items-center gy-5">
+                    <div class="col-lg-6">
+                        <img src="https://picsum.photos/seed/featuredcase/900/540" class="featured-img"
+                            alt="TechLaunch e-commerce featured case study">
+                    </div>
+                    <div class="col-lg-6">
+                        <span class="project-tag mb-3 d-inline-block">Web & Product</span>
+                        <h3 class="fw-bold mb-3">TechLaunch E-Commerce — from concept to 6-figure revenue in 90 days.
+                        </h3>
+                        <p class="mb-3">TechLaunch came to us with a product ready to sell but no digital home to sell
+                            it from. In eight weeks we built an end-to-end brand identity and e-commerce experience —
+                            complete with our ML tracking layer baked in from day one.</p>
+                        <p class="mb-4">Within 90 days of launch, the ML Insights Engine identified that users were
+                            dropping off at the third product image. We redesigned that sequence based on the data.
+                            Conversion rate climbed 38% within two weeks of the update.</p>
+                        <div class="row g-3 mb-4">
+                            <div class="col-4">
+                                <div class="tile p-3 text-center">
+                                    <h4 class="fw-bold mb-0" style="color:#3b82f6;">38%</h4>
+                                    <p class="text-secondary mb-0" style="font-size:0.8rem;">Conversion lift</p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="tile p-3 text-center">
+                                    <h4 class="fw-bold mb-0" style="color:#3b82f6;">8wk</h4>
+                                    <p class="text-secondary mb-0" style="font-size:0.8rem;">Time to launch</p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="tile p-3 text-center">
+                                    <h4 class="fw-bold mb-0" style="color:#3b82f6;">90d</h4>
+                                    <p class="text-secondary mb-0" style="font-size:0.8rem;">To 6-fig revenue</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary">Work with us on something similar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ STATS ROW ═══════════ -->
+        <section class="bg-light">
+            <div class="container py-5">
+                <div class="row gy-4 text-center">
+                    <div class="col-md-3">
+                        <div class="tile p-4">
+                            <h2 class="fw-bold mb-1" style="color:#3b82f6;">120+</h2>
+                            <p class="text-secondary mb-0">Projects delivered</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="tile p-4">
+                            <h2 class="fw-bold mb-1" style="color:#3b82f6;">3</h2>
+                            <p class="text-secondary mb-0">Service disciplines</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="tile p-4">
+                            <h2 class="fw-bold mb-1" style="color:#3b82f6;">14</h2>
+                            <p class="text-secondary mb-0">Countries served</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="tile p-4">
+                            <h2 class="fw-bold mb-1" style="color:#3b82f6;">98%</h2>
+                            <p class="text-secondary mb-0">Client retention</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ CTA ═══════════ -->
+        <section class="bg-white">
+            <div class="container">
+                <div class="row align-items-center gy-4">
+                    <div class="col-lg-7">
+                        <h2 class="fw-bold mb-3">Want to see work relevant to your industry?</h2>
+                        <p>We have case studies across fintech, health, sustainability, SaaS and e-commerce. Email us
+                            and we'll send a curated set that fits your brief before you commit to anything.</p>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="tile p-4 text-center">
+                            <p class="mb-3 text-secondary">Request a case study pack</p>
+                            <a href="mailto:enquiries@techcraft.eu" class="d-block h5 text-decoration-none mb-2"
+                                style="color:#60a5fa;">enquiries@techcraft.eu</a>
+                            <p class="mb-3 text-secondary" style="font-size:0.85rem;">or</p>
+                            <a href="contact.html" class="btn btn-primary w-100">Start a project conversation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold">TechCraft</h5>
+                    <p class="text-secondary mb-0">A digital creative agency crafting bold, human-first experiences for
+                        growing brands.</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="fw-bold mb-2">More from TechCraft</p>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="faq.html" class="text-white text-decoration-none">FAQ</a></li>
+                        <li><a href="careers.html" class="text-white text-decoration-none">Careers</a></li>
+                        <li><a href="insights.html" class="text-white text-decoration-none">Insights</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <p class="mb-1 text-secondary">Follow us</p>
+                    <a href="#" class="text-white text-decoration-none me-3">Instagram</a>
+                    <a href="#" class="text-white text-decoration-none me-3">LinkedIn</a>
+                    <a href="#" class="text-white text-decoration-none">Behance</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="theme.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // ════════════════════════════════════════════
+        //  Portfolio Category Filter
+        //  Filters project cards by data-category
+        //  attribute on each column wrapper.
+        // ════════════════════════════════════════════
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectCols = document.querySelectorAll('.project-col');
+
+            filterBtns.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    const filter = this.dataset.filter;
+
+                    // ── Update active button style ──
+                    filterBtns.forEach(function (b) {
+                        b.classList.remove('btn-primary');
+                        b.classList.add('btn-outline-light');
+                    });
+                    this.classList.remove('btn-outline-light');
+                    this.classList.add('btn-primary');
+
+                    // ── Show / hide project columns ──
+                    projectCols.forEach(function (col) {
+                        if (filter === 'all' || col.dataset.category === filter) {
+                            col.classList.remove('hidden');
+                        } else {
+                            col.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
