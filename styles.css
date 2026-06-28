@@ -58,32 +58,35 @@ a:hover {
   color: #60a5fa;
 }
 
-.letter-spacing-2 {
+.section-label {
   letter-spacing: 0.24em;
 }
 
-.tile {
+.panel-card {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 1.25rem;
   box-shadow: 0 30px 70px rgba(15, 23, 42, 0.25);
 }
 
-.tile p,
-.tile h5 {
+.panel-card p,
+.panel-card h5 {
   color: #f8fafc;
 }
 
-.tile.floating {
+.panel-card.tile-floating {
   transform: translateY(-12px);
   transition: transform 0.35s ease;
 }
 
-.tile.floating:hover {
+.tile-floating {
+}
+
+.panel-card.tile-floating:hover {
   transform: translateY(-18px);
 }
 
-.featured-tiles {
+.featured-grid {
   display: grid;
   gap: 1.25rem;
 }
@@ -97,7 +100,7 @@ a:hover {
   color: #e5e7eb;
 }
 
-.icon {
+.icon-badge {
   background: rgba(59, 130, 246, 0.12);
   display: inline-flex;
   align-items: center;
@@ -129,15 +132,15 @@ a:hover {
 .bg-white li,
 .bg-white a,
 .bg-white .text-secondary,
-.bg-white .tile p,
-.bg-white .tile h5,
-.bg-white .tile,
-.bg-white .tile h1,
-.bg-white .tile h2,
-.bg-white .tile h3,
-.bg-white .tile h4,
-.bg-white .tile h6,
-.bg-white .tile span,
+.bg-white .panel-card p,
+.bg-white .panel-card h5,
+.bg-white .panel-card,
+.bg-white .panel-card h1,
+.bg-white .panel-card h2,
+.bg-white .panel-card h3,
+.bg-white .panel-card h4,
+.bg-white .panel-card h6,
+.bg-white .panel-card span,
 .bg-white .service-card,
 .bg-white .service-card h5,
 .bg-white .service-card p {
@@ -225,14 +228,14 @@ footer a:hover {
   color: #0f172a !important;
 }
 
-.light-mode .tile {
+.light-mode .panel-card {
   background: #ffffff;
   border-color: rgba(148, 163, 184, 0.25);
   box-shadow: 0 15px 40px rgba(15, 23, 42, 0.08);
 }
 
-.light-mode .tile p,
-.light-mode .tile h5 {
+.light-mode .panel-card p,
+.light-mode .panel-card h5 {
   color: #0f172a;
 }
 
@@ -279,19 +282,19 @@ footer a:hover {
 .light-mode .bg-white li,
 .light-mode .bg-white a,
 .light-mode .bg-white .text-secondary,
-.light-mode .bg-white .tile p,
-.light-mode .bg-white .tile h5,
+.light-mode .bg-white .panel-card p,
+.light-mode .bg-white .panel-card h5,
 .light-mode .bg-white .lead,
 .light-mode .bg-white .display-5 {
   color: #0f172a !important;
 }
 
-.light-mode .bg-white .tile {
+.light-mode .bg-white .panel-card {
   background: #ffffff;
 }
 
-.light-mode .tile p,
-.light-mode .tile h5 {
+.light-mode .panel-card p,
+.light-mode .panel-card h5 {
   color: #0f172a !important;
 }
 
@@ -327,3 +330,15 @@ footer a:hover {
   }
 }
  
+
+/* placeholder selectors for renamed custom classes */
+.featured-image {
+}
+.filter-button {
+}
+.project-card {
+}
+.project-card-col {
+}
+.project-image {
+}
